@@ -1,7 +1,7 @@
 <?php
 /**
  * @package BH FAQ
- * @version 1.0
+ * @version 1.1
  */
 /*
 Plugin Name: BH FAQ
@@ -35,24 +35,22 @@ function bh_faq_initial(){?>
 add_action( 'wp_footer', 'bh_faq_initial' );
 
 /*Files to Include*/
-require_once('register-bh-faq-post-type.php');
+require_once('register-bh-faq-post.php');
 
 /* BH FAQ Loop */
 function bh_faq_template()
-{ ?>
-	<?php if(!is_paged()) { 
-		$arg = array( 'post_type' => 'bh_faq_faq', 'posts_per_page' => -1 );
-		$loop = new WP_Query( $arg );
-		?>
-		<div id="accordion">
-			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			<h3 class="bh_s_caption"><?php the_title();?></h3>
-			<div><?php the_content();?></div>
-			<?php endwhile;?>
-		</div>
-<?php	wp_reset_query(); 
-	} 
-}
+{ 
+	$bhfaq= '<div id="accordion">';
+	query_posts('post_type=bh_faq_faq&posts_per_page=-1');
+	if (have_posts()) : while (have_posts()) : the_post(); 
+		$faqtitle= get_the_title(); 
+		$faqcontent= get_the_content(); 
+		$bhfaq .='<h3 class="bh-faq-title">'.$faqtitle.'</h3><div class="bh-faq-content">'.$faqcontent.'</div>';		
+	endwhile; endif; wp_reset_query();
+	$bhfaq .= '</div>';
+	return $bhfaq;
+
+} 
 
 /**add the shortcode for the FAQ- for use in editor**/
 function bh_faq_shortcode($atts, $content=null){
