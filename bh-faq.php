@@ -137,7 +137,7 @@ function bh_faq_initial(){?>
 
 	<script>
 		jQuery(function() {
-		jQuery( "#accordion" ).accordion();
+		jQuery( ".accordion" ).accordion();
 		});
 	</script>
 <?php
@@ -150,7 +150,7 @@ require_once('register-bh-faq-post.php');
 /* BH FAQ Loop */
 function bh_faq_template()
 { 
-	$bhfaq= '<div id="accordion">';
+	$bhfaq= '<div class="accordion">';
 	query_posts('post_type=bh_faq_faq&posts_per_page=-1');
 	if (have_posts()) : while (have_posts()) : the_post(); 
 		$faqtitle= get_the_title(); 
