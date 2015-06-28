@@ -28,7 +28,7 @@ Active it and place shortcode.
 
 = Can i use my color =
 
-yes, you can use your desire from under Settings called "BH FAQ Setting".
+yes, you can use your desire color from under Settings called "BH FAQ Setting".
 
 == Screenshots ==
 
