@@ -8,11 +8,11 @@ Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin for added faq option into your site
+This plugin will be added Faq Option into your site. Very easy and nice plugin.If you had any problem to use this plugin. Please contact us. Thank you. Have a nice day
 
 == Description ==
 
-FAQ plugin. It will be enable faq option on your website. Unlimited Colors For Active and Hover options.
+This is BH FAQ plugin. It will be enable faq option on your website. Unlimited Colors For Active and Hover options.
 
 == Installation ==
 
@@ -28,7 +28,7 @@ Active it and place shortcode.
 
 = Can i use my color =
 
-yes, you can use your desire colors from under Settings called "BH FAQ Setting".
+yes, you can use your desire from under Settings called "BH FAQ Setting".
 
 == Screenshots ==
 
