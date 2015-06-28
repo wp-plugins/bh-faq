@@ -8,7 +8,7 @@ Plugin Name: BH FAQ
 Plugin URI: http://wordpress.org/plugins/bh-faq
 Description: FAQ plugin. This plugin made with jquery ui. Supported all crosebrowser.
 Author: Masum Billah
-Version: 1.1
+Version: 1.2
 Author URI: http://getmasum.com
 */
 
