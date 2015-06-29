@@ -39,14 +39,14 @@ function add_bhfaq_options()
 }  
 add_action('admin_menu', 'add_bhfaq_options');
 
-function bh_faq_plugin_actions( $links ) {
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'bh_faq_add_action_links' );
 
-		$settings_link = '<a href="' . admin_url( 'options-general.php?page=bh-faq-settings' ) . '">' . __('Settings') . '</a>';
-		array_unshift( $links, $settings_link ); // before other links
-
-	return $links;
+function bh_faq_add_action_links ( $bh_falinks ) {
+ $bh_faq_links = array(
+ '<a href="' . admin_url( 'options-general.php?page=bh-faq-settings' ) . '">Settings</a>',
+ );
+return array_merge( $bh_falinks, $bh_faq_links );
 }
-add_filter( 'plugin_action_links', 'bh_faq_plugin_actions', 10, 2 );
 
 // Default options values
 $bh_faq_defaults_options = array(
